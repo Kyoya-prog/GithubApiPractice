@@ -46,6 +46,7 @@ class GithubApiPracticeTests: XCTestCase {
             XCTAssertEqual(decodedStruct.items[0].htmlURL, "http://example.com")
         }
     }
+    
 
 
     func testPerformanceExample() throws {

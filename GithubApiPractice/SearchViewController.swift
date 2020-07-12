@@ -24,6 +24,7 @@ class SearchViewController: UIViewController{
         initPresenter()
         tableView.delegate = self
         tableView.dataSource = self
+        searchTextField.delegate = self
         tableView.register(UINib(nibName: "RepositoryCell", bundle: nil), forCellReuseIdentifier: "RepositoryCell")
         
     }
@@ -50,7 +51,7 @@ class SearchViewController: UIViewController{
     @IBAction func tappedSearchButton(_ sender: Any) {
         guard let text = searchTextField.text else{return}
         presenter.didTappedSearchButton(searchText: text)
-        
+    
     }
     
     func showEmptyResultAlert(){
@@ -61,6 +62,18 @@ class SearchViewController: UIViewController{
         
         
     }
+}
+
+extension SearchViewController:UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        searchTextField.resignFirstResponder()
+    }
+    
 }
 
 extension SearchViewController:SearchViewOutput{

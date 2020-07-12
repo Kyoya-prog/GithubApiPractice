@@ -10,16 +10,17 @@ import UIKit
 
 class RepositoryCell: UITableViewCell {
 
-    @IBOutlet weak var RepositoryNameLabel: UILabel!
-    @IBOutlet weak var userNameLabel: UILabel!
+ 
+    @IBOutlet weak var repositoryNameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+   
+    @IBOutlet weak var markOfDescription: UILabel!
     var repositoryURL:URL!
     override func awakeFromNib() {
         super.awakeFromNib()
-        RepositoryNameLabel.text = ""
-        userNameLabel.text = ""
+        repositoryNameLabel.text = ""
+        descriptionLabel.text = ""
         repositoryURL = URL(string: "")
-        
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,8 +30,8 @@ class RepositoryCell: UITableViewCell {
     }
     
     func setCell(repository:RepositoryModel.Repo){
-        RepositoryNameLabel.text = repository.name
-        userNameLabel.text = repository.fullName
+        repositoryNameLabel.text = repository.fullName
+        descriptionLabel.text = repository.description
         repositoryURL = URL(string: repository.htmlURL)
     }
     
