@@ -20,14 +20,24 @@ class SearchViewController: UIViewController{
     var webView: WKWebView!
     public override func viewDidLoad() {
         super.viewDidLoad()
+        initLayout()
         initPresenter()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "RepositoryCell", bundle: nil), forCellReuseIdentifier: "RepositoryCell")
-        webView = WKWebView(frame: CGRect(x: 0, y: 30, width: view.frame.width, height: view.frame.height - 20))
+        
     }
     
     func initLayout(){
+        
+        searchTextField.frame = CGRect(x: 20, y: tableView.frame.minY - view.frame.height / 8, width: view.frame.width / 1.5, height: 40)
+        searchButton.setTitle("検索", for: .normal)
+        searchButton.frame = CGRect(x: searchTextField.frame.maxX, y: tableView.frame.minY - view.frame.height / 8 , width: 100, height: 40)
+        searchButton.backgroundColor = .cyan
+        searchButton.tintColor = .white
+        searchButton.layer.cornerRadius = 20.0
+        
+       
         
         
     }
@@ -81,6 +91,7 @@ extension SearchViewController:UITableViewDelegate{
     }
     
 }
+
 
 
 
