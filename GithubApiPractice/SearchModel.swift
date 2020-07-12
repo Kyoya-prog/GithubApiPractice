@@ -30,6 +30,7 @@ protocol SearchModelInput{
     func searchRepository(query:String,complition:@escaping ()->Void)
     func numberRepositories()->Int
     func RepositoryForRowAt(IndexPath:Int)->RepositoryModel.Repo
+    func checkEmpty()->Bool
     
     
 }
@@ -37,7 +38,7 @@ protocol SearchModelInput{
 class SearchModel:SearchModelInput{
     
     var RepositoriesArray = [RepositoryModel.Repo]()
-    func searchRepository(query:String,complition: @escaping ()->Void) {
+    func searchRepository(query:String,complition: @escaping ()->Void)  {
         let urlRequest = createURLRequest(query: query)
         print(urlRequest)
         let decoder = JSONDecoder()
@@ -47,23 +48,22 @@ class SearchModel:SearchModelInput{
                 let decodedStruct = try decoder.decode(RepositoryModel.self, from: Data!)
                 for i in 0..<decodedStruct.items.count{
                     self.RepositoriesArray.append(decodedStruct.items[i])
-                    print("データ取り出し中")
                 }
             }catch{
             }
-            print("非同期処理はここ")
             complition()
-            print("ここまで")
         }
         
         task.resume()
+
     }
     
     func createURLRequest(query:String)->URLRequest{
         let baseURLString = "https://api.github.com/search/repositories"
         let parameter = query
         let urlString = baseURLString + "?q=\(parameter)"
-        let url = URL(string: urlString)!
+        let encodeURLString: String = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = URL(string: encodeURLString)!
         let urlRequest = URLRequest(url: url)
         return urlRequest
     }
@@ -73,5 +73,8 @@ class SearchModel:SearchModelInput{
     }
     func RepositoryForRowAt(IndexPath indexPath:Int) -> RepositoryModel.Repo {
         return RepositoriesArray[indexPath]
+    }
+    func checkEmpty() -> Bool {
+       return RepositoriesArray.isEmpty
     }
 }

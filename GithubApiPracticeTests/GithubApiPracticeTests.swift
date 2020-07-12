@@ -9,6 +9,20 @@
 import XCTest
 @testable import GithubApiPractice
 
+extension RepositoryModel{
+    static var exampleJSON: String{
+        return """
+        {
+        "name":"Test"
+        "full_name":"Sample/Test"
+        "description":"This is test JSON"
+        "html_url":"http://example.com"
+        }
+        """
+    }
+}
+
+
 class GithubApiPracticeTests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -18,11 +32,21 @@ class GithubApiPracticeTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testDecode(){
+        func testDecode() throws {
+            let encoder = JSONEncoder()
+            let data = RepositoryModel.exampleJSON
+            let repository = try encoder.encode(data)
+            let decoder = JSONDecoder()
+            let decodedStruct = try decoder.decode(RepositoryModel.self, from: repository)
+            XCTAssertEqual(decodedStruct.items[0].name, "Test")
+            XCTAssertEqual(decodedStruct.items[0].fullName, "Sample/Test")
+            XCTAssertEqual(decodedStruct.items[0].description, "This is test JSON")
+            XCTAssertEqual(decodedStruct.items[0].htmlURL, "http://example.com")
+        }
     }
+
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

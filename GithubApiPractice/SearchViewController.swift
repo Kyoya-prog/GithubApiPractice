@@ -30,12 +30,13 @@ class SearchViewController: UIViewController{
     
     func initLayout(){
         
-        searchTextField.frame = CGRect(x: 20, y: tableView.frame.minY - view.frame.height / 8, width: view.frame.width / 1.5, height: 40)
+        searchTextField.frame = CGRect(x: 20, y: tableView.frame.minY - view.frame.height / 15, width: view.frame.width / 1.5, height: 40)
         searchButton.setTitle("検索", for: .normal)
-        searchButton.frame = CGRect(x: searchTextField.frame.maxX, y: tableView.frame.minY - view.frame.height / 8 , width: 100, height: 40)
+        searchButton.frame = CGRect(x: searchTextField.frame.maxX, y: tableView.frame.minY - view.frame.height / 15 , width: 100, height: 40)
         searchButton.backgroundColor = .cyan
         searchButton.tintColor = .white
         searchButton.layer.cornerRadius = 20.0
+        tableView.frame = CGRect(x: 0, y: view.frame.height / 4, width: view.frame.width, height: view.frame.height / 4 * 3)
         
        
         
@@ -48,8 +49,17 @@ class SearchViewController: UIViewController{
     
     @IBAction func tappedSearchButton(_ sender: Any) {
         guard let text = searchTextField.text else{return}
-        print(text)
         presenter.didTappedSearchButton(searchText: text)
+        
+    }
+    
+    func showEmptyResultAlert(){
+        let alert = UIAlertController(title: "検索結果がありません", message: "検索結果がありません、もう一度検索しなおしてください", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        
+        
     }
 }
 

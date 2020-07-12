@@ -37,7 +37,18 @@ class SearchPresenter:SearchViewInput{
     var model:SearchModelInput!
     func didTappedSearchButton(searchText: String) {
         model.searchRepository(query: searchText) {
+            do{
+                if self.model.checkEmpty(){
+                    throw SearchError.emptyResult
+                }
+            }
+            catch{
+                DispatchQueue.main.async {
+                    self.view.showEmptyResultAlert()
+                }
+            }
             self.view.didLoadRepositories()
+
         }
     }
     

@@ -19,6 +19,7 @@
 		3DBC852224B87F500036094A /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC852024B87F500036094A /* RepositoryCell.swift */; };
 		3DBC852324B87F500036094A /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DBC852124B87F500036094A /* RepositoryCell.xib */; };
 		3DBC852524BAD13A0036094A /* ShowRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC852424BAD13A0036094A /* ShowRepositoryViewController.swift */; };
+		3DBC852724BAE9EF0036094A /* SearchErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC852624BAE9EF0036094A /* SearchErrorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		3DBC852024B87F500036094A /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		3DBC852124B87F500036094A /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		3DBC852424BAD13A0036094A /* ShowRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRepositoryViewController.swift; sourceTree = "<group>"; };
+		3DBC852624BAE9EF0036094A /* SearchErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchErrorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				3DBC852024B87F500036094A /* RepositoryCell.swift */,
 				3DBC852124B87F500036094A /* RepositoryCell.xib */,
 				3DBC852424BAD13A0036094A /* ShowRepositoryViewController.swift */,
+				3DBC852624BAE9EF0036094A /* SearchErrorModel.swift */,
 			);
 			path = GithubApiPractice;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			files = (
 				3DBC84FD24B8165E0036094A /* SearchViewController.swift in Sources */,
 				3DBC852224B87F500036094A /* RepositoryCell.swift in Sources */,
+				3DBC852724BAE9EF0036094A /* SearchErrorModel.swift in Sources */,
 				3DBC852524BAD13A0036094A /* ShowRepositoryViewController.swift in Sources */,
 				3DBC84F924B8165E0036094A /* AppDelegate.swift in Sources */,
 				3DBC851B24B8174B0036094A /* SearchPresenter.swift in Sources */,
