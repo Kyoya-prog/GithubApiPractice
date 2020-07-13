@@ -16,8 +16,10 @@ class SearchViewController: UIViewController{
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchButton: UIButton!
+    
     var presenter:SearchViewInput!
     var webView: WKWebView!
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         initLayout()
@@ -26,11 +28,9 @@ class SearchViewController: UIViewController{
         tableView.dataSource = self
         searchTextField.delegate = self
         tableView.register(UINib(nibName: "RepositoryCell", bundle: nil), forCellReuseIdentifier: "RepositoryCell")
-        
     }
     
     func initLayout(){
-        
         searchTextField.frame = CGRect(x: 20, y: tableView.frame.minY - view.frame.height / 15, width: view.frame.width / 1.5, height: 40)
         searchButton.setTitle("検索", for: .normal)
         searchButton.frame = CGRect(x: searchTextField.frame.maxX, y: tableView.frame.minY - view.frame.height / 15 , width: 100, height: 40)
@@ -38,11 +38,8 @@ class SearchViewController: UIViewController{
         searchButton.tintColor = .white
         searchButton.layer.cornerRadius = 20.0
         tableView.frame = CGRect(x: 0, y: view.frame.height / 4, width: view.frame.width, height: view.frame.height / 4 * 3)
-        
-       
-        
-        
     }
+    
     func initPresenter(){
          let model = SearchModel()
         self.presenter = SearchPresenter(view:self,model:model)
@@ -51,7 +48,6 @@ class SearchViewController: UIViewController{
     @IBAction func tappedSearchButton(_ sender: Any) {
         guard let text = searchTextField.text else{return}
         presenter.didTappedSearchButton(searchText: text)
-    
     }
     
     func showEmptyResultAlert(){
@@ -59,9 +55,8 @@ class SearchViewController: UIViewController{
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
-        
-        
     }
+    
 }
 
 extension SearchViewController:UITextFieldDelegate{
@@ -103,6 +98,7 @@ extension SearchViewController:UITableViewDataSource{
         return cell
     }
 }
+
 extension SearchViewController:UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

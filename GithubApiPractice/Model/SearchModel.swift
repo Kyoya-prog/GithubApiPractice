@@ -29,7 +29,7 @@ protocol SearchModelInput{
     
     func searchRepository(query:String,complition:@escaping ()->Void)
     func numberRepositories()->Int
-    func RepositoryForRowAt(IndexPath:Int)->RepositoryModel.Repo
+    func RepositoryForRowAt(indexPath:Int)->RepositoryModel.Repo
     func checkEmpty()->Bool
     
     
@@ -71,7 +71,7 @@ class SearchModel:SearchModelInput{
     func numberRepositories() ->Int{
         return RepositoriesArray.count
     }
-    func RepositoryForRowAt(IndexPath indexPath:Int) -> RepositoryModel.Repo {
+    func RepositoryForRowAt(indexPath:Int) -> RepositoryModel.Repo {
         return RepositoriesArray[indexPath]
     }
     func checkEmpty() -> Bool {

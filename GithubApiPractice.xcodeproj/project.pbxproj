@@ -70,6 +70,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D306CEA24BC1FE1000B2B32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DBC84FE24B8165E0036094A /* Main.storyboard */,
+				3DBC84FC24B8165E0036094A /* SearchViewController.swift */,
+				3DBC852424BAD13A0036094A /* ShowRepositoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D306CEB24BC1FF8000B2B32 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3DBC851A24B8174B0036094A /* SearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3D306CEC24BC2029000B2B32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DBC851C24B817570036094A /* SearchModel.swift */,
+				3DBC852624BAE9EF0036094A /* SearchErrorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3D306CED24BC2038000B2B32 /* RepositoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				3DBC852024B87F500036094A /* RepositoryCell.swift */,
+				3DBC852124B87F500036094A /* RepositoryCell.xib */,
+			);
+			path = RepositoryCell;
+			sourceTree = "<group>";
+		};
 		3DBC84EC24B8165E0036094A = {
 			isa = PBXGroup;
 			children = (
@@ -91,19 +127,15 @@
 		3DBC84F724B8165E0036094A /* GithubApiPractice */ = {
 			isa = PBXGroup;
 			children = (
+				3D306CED24BC2038000B2B32 /* RepositoryCell */,
+				3D306CEC24BC2029000B2B32 /* Model */,
+				3D306CEB24BC1FF8000B2B32 /* Presenter */,
+				3D306CEA24BC1FE1000B2B32 /* View */,
 				3DBC84F824B8165E0036094A /* AppDelegate.swift */,
 				3DBC84FA24B8165E0036094A /* SceneDelegate.swift */,
-				3DBC84FC24B8165E0036094A /* SearchViewController.swift */,
-				3DBC84FE24B8165E0036094A /* Main.storyboard */,
 				3DBC850124B8165F0036094A /* Assets.xcassets */,
 				3DBC850324B8165F0036094A /* LaunchScreen.storyboard */,
 				3DBC850624B8165F0036094A /* Info.plist */,
-				3DBC851A24B8174B0036094A /* SearchPresenter.swift */,
-				3DBC851C24B817570036094A /* SearchModel.swift */,
-				3DBC852024B87F500036094A /* RepositoryCell.swift */,
-				3DBC852124B87F500036094A /* RepositoryCell.xib */,
-				3DBC852424BAD13A0036094A /* ShowRepositoryViewController.swift */,
-				3DBC852624BAE9EF0036094A /* SearchErrorModel.swift */,
 			);
 			path = GithubApiPractice;
 			sourceTree = "<group>";

@@ -48,7 +48,6 @@ class SearchPresenter:SearchViewInput{
                 }
             }
             self.view.didLoadRepositories()
-
         }
     }
     
@@ -58,7 +57,7 @@ class SearchPresenter:SearchViewInput{
        }
     
     func getRepositoryForRowAt(indexPath: Int) -> RepositoryModel.Repo {
-        let repository = model.RepositoryForRowAt(IndexPath:indexPath)
+        let repository = model.RepositoryForRowAt(indexPath:indexPath)
         return repository
     }
     

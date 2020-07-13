@@ -30,8 +30,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgc-kH-1cT">
-                        <rect key="frame" x="109" y="55" width="257" height="49"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgc-kH-1cT">
+                        <rect key="frame" x="109" y="53" width="257" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -45,7 +45,7 @@
                 <outlet property="markOfDescription" destination="4cu-Va-K5B" id="ESn-Lx-shA"/>
                 <outlet property="repositoryNameLabel" destination="R1x-Vp-em2" id="1Yw-8b-qtw"/>
             </connections>
-            <point key="canvasLocation" x="933" y="-135"/>
+            <point key="canvasLocation" x="931.88405797101461" y="-135.26785714285714"/>
         </tableViewCell>
     </objects>
 </document>
