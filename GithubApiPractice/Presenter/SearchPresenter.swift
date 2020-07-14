@@ -36,6 +36,7 @@ class SearchPresenter:SearchViewInput{
     weak var view:SearchViewController!
     var model:SearchModelInput!
     func didTappedSearchButton(searchText: String) {
+        view.searchTextField.resignFirstResponder()
         model.searchRepository(query: searchText) {
             do{
                 if self.model.checkEmpty(){
